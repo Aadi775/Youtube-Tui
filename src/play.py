@@ -5,7 +5,7 @@ import getopt
 
 argumentList = sys.argv[1:]
 
-ptions="hl:"
+options="hl:"
 
 long_options = ["help","link"]
 
