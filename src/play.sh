@@ -1,2 +1,2 @@
 #!/bin/sh
-mpv "$1"
+mpv --ytdl-format=$1+bestaudio "$2"
