@@ -6,7 +6,9 @@ class Info():
     Channel= []
     Links = []
     Name = []
-    
+    thumbnail= []
+    Channel_name =[]
+
 
 def search():
     searchh = input("what you wanna search: ")
@@ -36,17 +38,25 @@ def search():
             for key,value in data.items():
 
                 for k,v in value.items():
-                    if k == "videoId":
-                        print(v + "\n")
-                    
-                    if k == "title" :
-                        print(v['runs' ][0]['text'] +'\n')
 
-                    
+                    if k == "title" :
+                        Info.Name.append(v['runs' ][0]['text'])
+                        #print(v['runs' ][0]['text'] +'\n')
+
+                    if k == "videoId":
+                     #   print (" ")
+                        #print(v + "\n")
+                        Info.Links.append(v)
+                        
                     if k=="thumbnail" or k=="thumbnails":
-                        print(v["thumbnails"][0]["url"]+'\n')
-                
-    except:
+                        #print(v["thumbnails"][0]["url"]+'\n')
+                        Info.thumbnail.append(v["thumbnails"][0]["url"])
+                    if k=='longBylineText':
+                        Info.Channel_name.append(v['runs'][0]['text'])
+                        Info.Channel.append(v['runs'][0]['navigationEndpoint']['browseEndpoint']['browseId'])
+
+    except: 
         print(" ")
 
 search()
+print(Info.Channel)
