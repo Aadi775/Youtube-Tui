@@ -54,4 +54,3 @@ class Get:
     except:
         subprocess.call(["./video.sh" ,Storage.r ,link])
 
-
