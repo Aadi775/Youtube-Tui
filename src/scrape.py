@@ -10,8 +10,8 @@ class Info():
     Channel_name =[]
 
 
-def search():
-    searchh = input("what you wanna search: ")
+def search(searchh):
+    # searchh = input("what you wanna search: ")
     query = str(searchh.replace(" ","+"))
 
     response = requests.get(f"https://www.youtube.com/results?search_query={query}").text
@@ -20,9 +20,9 @@ def search():
     soup =BeautifulSoup(response,'lxml')
     scripts = soup.findAll("script")
     json_text=re.search("var ytInitialData = (.+)[,:]{1}",str(scripts)).group(1)
-    endpoint = json_text.find(";")
+    endpoint = json_text.rindex("};")+1
     json_text = json_text[:endpoint]
-
+    print(json_text)
     json_data = json.loads(json_text)
 
     content = (
@@ -57,3 +57,5 @@ def search():
 
     except: 
         print(" ")
+search("lovely")
+print(Info.Name)
