@@ -57,5 +57,5 @@ def search(searchh):
 
     except: 
         print(" ")
-search("lovely")
-print(Info.Name)
+# search("lovely)
+# print(Info.Name)
