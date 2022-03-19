@@ -22,7 +22,7 @@ def search(searchh):
     json_text=re.search("var ytInitialData = (.+)[,:]{1}",str(scripts)).group(1)
     endpoint = json_text.rindex("};")+1
     json_text = json_text[:endpoint]
-    print(json_text)
+    # print(json_text)
     json_data = json.loads(json_text)
 
     content = (
