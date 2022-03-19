@@ -1,3 +1,3 @@
 #!/bin/sh
-mpv --no-video "$2" --vo=null
+mpv --no-video "$1" 
 

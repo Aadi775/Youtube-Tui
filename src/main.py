@@ -18,6 +18,7 @@ try:
     link = temp+scrape.Info.Links[int(select)-1]
     quality = input("choose the resolution (144/240/360/480/720/1080)[press enter for best quality]:")
     mp3 = input("Do you wanna run mp3 format(yes/no): ")
+    print(link)
     play.Get(link,quality,mp3)
 except:
     pass
