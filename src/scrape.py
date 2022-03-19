@@ -57,6 +57,3 @@ def search():
 
     except: 
         print(" ")
-
-search()
-print(Info.Channel)
